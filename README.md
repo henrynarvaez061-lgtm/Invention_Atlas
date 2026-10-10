@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Proyecto MN V1.1 — Atlas integrado con interfaz HTML
 
 Esta versión mantiene Django y Django REST Framework como backend del proyecto MN e incluye explícitamente el frontend HTML/CSS original de Atlas.
@@ -44,3 +45,6 @@ Abre `http://127.0.0.1:8000/`. Para la administración de Django, usa `http://12
 ## Nota sobre los archivos de base de datos
 
 Se conservan los modelos y migraciones del proyecto MN y se agregan los modelos para activos universitarios, órdenes e historial de Atlas. Si se desea empezar con una base de datos limpia, haz una copia de seguridad antes de retirar `main/db.sqlite3`; normalmente basta con ejecutar `python manage.py migrate`.
+=======
+# Invention_Atlas
+>>>>>>> f537647bbd87c3d1f4d211279ffc0a1fc8ebc601
