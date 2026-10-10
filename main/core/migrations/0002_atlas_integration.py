@@ -1,0 +1,18 @@
+from django.db import migrations, models
+
+class Migration(migrations.Migration):
+    dependencies = [("core", "0001_initial")]
+    operations = [
+        migrations.AlterField(model_name="user", name="email", field=models.EmailField(max_length=254, unique=True)),
+        migrations.AlterField(model_name="user", name="phone", field=models.CharField(blank=True, max_length=20)),
+        migrations.AlterField(model_name="building", name="incharge", field=models.ManyToManyField(blank=True, related_name="buildings", to="core.user")),
+        migrations.AlterField(model_name="activo", name="purhase_day", field=models.DateTimeField(blank=True, null=True)),
+        migrations.AlterField(model_name="activo", name="guarantee", field=models.DateTimeField(blank=True, null=True)),
+        migrations.AlterField(model_name="activo", name="alive_expectation", field=models.DateTimeField(blank=True, null=True)),
+        migrations.CreateModel(name="ActivoUniversidad", fields=[
+            ("id", models.CharField(max_length=100, primary_key=True, serialize=False)), ("codigo", models.CharField(max_length=100, unique=True)), ("nombre", models.CharField(max_length=200)), ("categoria", models.CharField(max_length=100)), ("ubicacion", models.CharField(max_length=200)), ("responsable", models.CharField(max_length=200)), ("estado", models.CharField(db_index=True, max_length=50)), ("marca", models.CharField(blank=True, default="", max_length=100)), ("modelo", models.CharField(blank=True, default="", max_length=100)), ("adquisicion", models.CharField(blank=True, default="", max_length=40)), ("proximaRevision", models.CharField(blank=True, default="", max_length=40)), ("valor", models.DecimalField(decimal_places=2, default=0, max_digits=12)), ("vidaUtil", models.DecimalField(decimal_places=2, default=0, max_digits=10)), ("created_at", models.DateTimeField(auto_now_add=True)), ("updated_at", models.DateTimeField(auto_now=True)),], options={"ordering": ["-created_at"]}),
+        migrations.CreateModel(name="OrdenActivo", fields=[
+            ("id", models.CharField(max_length=100, primary_key=True, serialize=False)), ("activoId", models.CharField(db_index=True, max_length=100)), ("titulo", models.CharField(max_length=200)), ("responsable", models.CharField(max_length=200)), ("prioridad", models.CharField(max_length=40)), ("estado", models.CharField(db_index=True, max_length=50)), ("fecha", models.CharField(max_length=40)), ("vencimiento", models.CharField(max_length=40)), ("cierre", models.CharField(blank=True, default="", max_length=40)), ("resultado", models.TextField(blank=True, default="")), ("created_at", models.DateTimeField(auto_now_add=True)),], options={"ordering": ["-created_at"]}),
+        migrations.CreateModel(name="HistorialActivo", fields=[
+            ("id", models.CharField(max_length=100, primary_key=True, serialize=False)), ("activoId", models.CharField(db_index=True, max_length=100)), ("fecha", models.CharField(max_length=40)), ("tipo", models.CharField(max_length=100)), ("detalle", models.TextField()), ("tecnico", models.CharField(max_length=200)), ("prioridad", models.CharField(max_length=40)), ("costo", models.DecimalField(decimal_places=2, default=0, max_digits=12)), ("repuesto", models.CharField(blank=True, default="", max_length=200)), ("cantidad", models.DecimalField(blank=True, decimal_places=2, max_digits=10, null=True)), ("documento", models.CharField(blank=True, default="", max_length=500)), ("foto", models.CharField(blank=True, default="", max_length=500)), ("created_at", models.DateTimeField(auto_now_add=True)),], options={"ordering": ["-created_at"]}),
+    ]
