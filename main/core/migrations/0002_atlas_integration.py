@@ -28,17 +28,17 @@ class Migration(migrations.Migration):
                 to="core.user",
             ),
         ),
-        migrations.AlterField(
+        migrations.AddField(
             model_name="activo",
             name="purhase_day",
             field=models.DateTimeField(blank=True, null=True),
         ),
-        migrations.AlterField(
+        migrations.AddField(
             model_name="activo",
             name="guarantee",
             field=models.DateTimeField(blank=True, null=True),
         ),
-        migrations.AlterField(
+        migrations.AddField(
             model_name="activo",
             name="alive_expectation",
             field=models.DateTimeField(blank=True, null=True),
