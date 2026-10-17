@@ -1,0 +1,30 @@
+# PRODUCT.md
+
+## Overview
+**Product name:** Atlas - Sistema de Gestión de Activos Universitarios  
+**Tagline:** "Visibilidad total para mantener tu universidad en movimiento."  
+**Description:** A web application for managing university assets, work orders, and maintenance history. It provides centralized inventory management with operational health tracking.
+
+## Target audience
+- University operations/maintenance teams
+- Facilities management staff
+- IT/technical staff responsible for equipment
+- Administrative personnel managing university assets
+
+## Core features
+1. Dashboard with key metrics (total assets, operational, priority, estimated value)
+2. Asset inventory management (CRUD)
+3. Work orders (creation, tracking)
+4. Maintenance history/incidents tracking
+5. Smart alerts for overdue maintenance and out-of-service assets
+6. Filtering and search capabilities
+
+## Surface to improve/design
+The main interface is `main/core/templates/core/index.html` (Django template). This is an Operate mode interface (task-focused dashboard for managing assets).
+
+## Constraints
+- Built with Django + Django REST Framework backend
+- Frontend is a single-page HTML template with vanilla JS, CSS variables
+- Spanish language interface
+- Must maintain existing API compatibility (`/api/storages/...`)
+- Works in desktop and responsive mobile views
