@@ -1,0 +1,89 @@
+    <!-- Modal: historial -->
+
+    <div class="modal" id="historyModal" role="dialog" aria-modal="true" aria-labelledby="historyModalTitle">
+        <div class="dialog" data-ui>
+
+            <div class="dialog-head">
+                <div>
+                    <h2 id="historyModalTitle">Registrar incidencia o revisión</h2>
+                    <p>Queda archivado en el historial del activo.</p>
+                </div>
+                <button type="button" class="btn icon ghost" onclick="closeModals()" aria-label="Cerrar">
+                    <i data-lucide="x" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <form class="form" onsubmit="saveHistory(event)">
+
+                <label class="wide">
+                    Activo
+                    <select class="select" name="activoId" id="historyAsset" required></select>
+                </label>
+
+                <label>
+                    Tipo
+                    <select class="select" name="tipo">
+                        <option>Incidencia</option>
+                        <option>Revisión preventiva</option>
+                        <option>Reparación</option>
+                        <option>Cambio de ubicación</option>
+                    </select>
+                </label>
+
+                <label>
+                    Prioridad
+                    <select class="select" name="prioridad">
+                        <option>Media</option>
+                        <option>Alta</option>
+                        <option>Urgente</option>
+                        <option>Baja</option>
+                    </select>
+                </label>
+
+                <label class="wide">
+                    Detalle
+                    <textarea
+                        class="input"
+                        name="detalle"
+                        rows="3"
+                        required
+                        placeholder="Describe la situación, hallazgos o trabajo realizado..."
+                    ></textarea>
+                </label>
+
+                <label>
+                    Técnico
+                    <input class="input" name="tecnico" required placeholder="Nombre del técnico">
+                </label>
+
+                <label>
+                    Costo
+                    <input class="input" name="costo" type="number" min="0" step="0.01" value="0">
+                </label>
+
+                <label>
+                    Repuesto utilizado
+                    <input class="input" name="repuesto" placeholder="Opcional">
+                </label>
+
+                <label>
+                    Cantidad
+                    <input class="input" name="cantidad" type="number" min="0" value="0">
+                </label>
+
+                <div class="modal-actions wide">
+                    <button type="button" class="btn" onclick="closeModals()">
+                        Cancelar
+                    </button>
+
+                    <button class="btn primary">
+                        Guardar registro
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>

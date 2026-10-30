@@ -1,0 +1,185 @@
+        /* ============================================================
+           1. TOKENS · "Placa de identificación"
+           Acero negro (oscuro) / aluminio cepillado (claro).
+           Un solo acento: naranja de seguridad.
+           ============================================================ */
+
+        :root {
+            --ground: #0e1114;
+            --surface: #171b1f;
+            --surface-2: #1e2429;
+            --surface-3: #272f35;
+            --line: #2b333a;
+            --line-strong: #3b464e;
+
+            --ink: #edf2f5;
+            --ink-2: #aab6be;
+            --ink-3: #86939c;
+
+            --accent: #ff6a2b;
+            --accent-2: #ff8a55;
+            --accent-ink: #160a03;
+            --accent-soft: rgba(255, 106, 43, 0.16);
+
+            --ok: #57c78f;
+            --ok-soft: rgba(87, 199, 143, 0.16);
+            --warn: #e7b34c;
+            --warn-soft: rgba(231, 179, 76, 0.16);
+            --danger: #f4766f;
+            --danger-soft: rgba(239, 99, 96, 0.16);
+            --neutral: #93a5b1;
+            --neutral-soft: rgba(147, 165, 177, 0.14);
+
+            --radius: 2px;
+            --radius-lg: 3px;
+
+            --rail-w: 250px;
+
+            --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+            --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+            --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+            --t-fast: 140ms;
+            --t-base: 200ms;
+
+            --focus: 0 0 0 2px var(--ground), 0 0 0 4px var(--accent);
+            --shadow-float: 0 24px 60px -24px rgba(0, 0, 0, 0.85);
+
+            --font: 'Archivo', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            --font-narrow: 'Archivo Narrow', 'Archivo', system-ui, sans-serif;
+        }
+
+        [data-theme='light'] {
+            --ground: #e6e9ec;
+            --surface: #f4f6f7;
+            --surface-2: #ffffff;
+            --surface-3: #e9edef;
+            --line: #d2d8dc;
+            --line-strong: #b6bfc6;
+
+            --ink: #14181b;
+            --ink-2: #515d67;
+            --ink-3: #626e79;
+
+            --accent: #c2410c;
+            --accent-2: #e0521a;
+            --accent-ink: #ffffff;
+            --accent-soft: rgba(194, 65, 12, 0.12);
+
+            --ok: #197049;
+            --ok-soft: rgba(28, 122, 82, 0.13);
+            --warn: #7d5900;
+            --warn-soft: rgba(160, 116, 0, 0.15);
+            --danger: #b02f36;
+            --danger-soft: rgba(192, 54, 59, 0.12);
+            --neutral: #56626c;
+            --neutral-soft: rgba(86, 98, 108, 0.12);
+
+            --shadow-float: 0 24px 50px -26px rgba(20, 26, 30, 0.4);
+        }
+
+        /* ============================================================
+           2. BASE
+           ============================================================ */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            margin: 0;
+            background: var(--ground);
+            color: var(--ink);
+            font-family: var(--font);
+            font-size: 16px;
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: var(--font-narrow);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        ::selection {
+            background: var(--accent);
+            color: var(--accent-ink);
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit;
+            color: inherit;
+        }
+
+        button {
+            cursor: pointer;
+            font-family: var(--font);
+            border: 0;
+            background: none;
+            transition: background-color var(--t-fast) ease, color var(--t-fast) ease,
+                border-color var(--t-fast) ease, transform 120ms var(--ease-out);
+        }
+
+        .num {
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: 'tnum' 1;
+        }
+
+        :focus-visible {
+            outline: none;
+            box-shadow: var(--focus); /* taste-skill-ignore: anillo de foco (accesibilidad) */
+            border-radius: var(--radius);
+        }
+
+        .skip {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 50;
+            padding: 10px 14px;
+            background: var(--accent);
+            color: var(--accent-ink);
+            font-weight: 600;
+            transform: translateY(-160%);
+            transition: transform var(--t-base) var(--ease-out);
+        }
+
+        .skip:focus-visible {
+            transform: translateY(0);
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .app {
+            display: flex;
+            min-height: 100svh;
+        }

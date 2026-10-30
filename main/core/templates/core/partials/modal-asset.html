@@ -1,0 +1,100 @@
+    <!-- Modal: nuevo activo -->
+
+    <div class="modal" id="assetModal" role="dialog" aria-modal="true" aria-labelledby="assetModalTitle">
+        <div class="dialog" data-ui>
+
+            <div class="dialog-head">
+                <div>
+                    <h2 id="assetModalTitle">Registrar nuevo activo</h2>
+                    <p>La placa de identificación del equipo.</p>
+                </div>
+                <button type="button" class="btn icon ghost" onclick="closeModals()" aria-label="Cerrar">
+                    <i data-lucide="x" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <form class="form" onsubmit="saveAsset(event)">
+
+                <label>
+                    Código QR / inventario
+                    <input class="input" name="codigo" required placeholder="ACT-2026-001">
+                </label>
+
+                <label>
+                    Nombre del activo
+                    <input class="input" name="nombre" required placeholder="Proyector Aula 204">
+                </label>
+
+                <label>
+                    Categoría
+                    <select class="select" name="categoria">
+                        <option>Computación</option>
+                        <option>Proyección</option>
+                        <option>Climatización</option>
+                        <option>Impresión</option>
+                        <option>Redes</option>
+                        <option>Mobiliario</option>
+                        <option>Herramientas</option>
+                    </select>
+                </label>
+
+                <label>
+                    Estado
+                    <select class="select" name="estado">
+                        <option>Operativo</option>
+                        <option>En mantenimiento</option>
+                        <option>Fuera de servicio</option>
+                    </select>
+                </label>
+
+                <label>
+                    Ubicación
+                    <input class="input" name="ubicacion" required placeholder="Edificio A · Aula 204">
+                </label>
+
+                <label>
+                    Responsable
+                    <input class="input" name="responsable" required placeholder="Nombre o departamento">
+                </label>
+
+                <label>
+                    Marca
+                    <input class="input" name="marca" placeholder="Dell, Epson...">
+                </label>
+
+                <label>
+                    Modelo
+                    <input class="input" name="modelo" placeholder="Modelo">
+                </label>
+
+                <label>
+                    Fecha de adquisición
+                    <input class="input" name="adquisicion" type="date">
+                </label>
+
+                <label>
+                    Valor de adquisición
+                    <input class="input" name="valor" type="number" min="0" step="0.01" placeholder="0.00">
+                </label>
+
+                <div class="wide">
+                    <label>
+                        Próxima revisión
+                        <input class="input" name="proximaRevision" type="date">
+                    </label>
+                </div>
+
+                <div class="modal-actions wide">
+                    <button type="button" class="btn" onclick="closeModals()">
+                        Cancelar
+                    </button>
+
+                    <button class="btn primary">
+                        Guardar activo
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>

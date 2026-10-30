@@ -1,0 +1,70 @@
+    <!-- Modal: nueva orden -->
+
+    <div class="modal" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
+        <div class="dialog" data-ui>
+
+            <div class="dialog-head">
+                <div>
+                    <h2 id="orderModalTitle">Nueva orden de trabajo</h2>
+                    <p>Asigna una tarea de mantenimiento a un activo.</p>
+                </div>
+                <button type="button" class="btn icon ghost" onclick="closeModals()" aria-label="Cerrar">
+                    <i data-lucide="x" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <form class="form" onsubmit="saveOrder(event)">
+
+                <label class="wide">
+                    Activo
+                    <select class="select" name="activoId" id="orderAsset" required></select>
+                </label>
+
+                <label class="wide">
+                    Título
+                    <input class="input" name="titulo" required placeholder="Revisar aire acondicionado">
+                </label>
+
+                <label>
+                    Responsable
+                    <input class="input" name="responsable" required placeholder="Técnico / área">
+                </label>
+
+                <label>
+                    Prioridad
+                    <select class="select" name="prioridad">
+                        <option>Media</option>
+                        <option>Alta</option>
+                        <option>Urgente</option>
+                        <option>Baja</option>
+                    </select>
+                </label>
+
+                <label>
+                    Vencimiento
+                    <input class="input" name="vencimiento" type="date" required>
+                </label>
+
+                <label>
+                    Estado
+                    <select class="select" name="estado">
+                        <option>Abierta</option>
+                        <option>En progreso</option>
+                        <option>Completada</option>
+                    </select>
+                </label>
+
+                <div class="modal-actions wide">
+                    <button type="button" class="btn" onclick="closeModals()">
+                        Cancelar
+                    </button>
+
+                    <button class="btn primary">
+                        Crear orden
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>

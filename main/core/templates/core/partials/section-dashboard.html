@@ -1,0 +1,83 @@
+            <!-- Resumen -->
+
+            <section id="dashboard" class="section" aria-label="Resumen">
+
+                <div class="kpi" data-ui>
+                    <div class="kpi-cell">
+                        <div class="kpi-label">Activos registrados</div>
+                        <div class="kpi-value num" id="total">–</div>
+                        <div class="kpi-sub">Inventario centralizado</div>
+                    </div>
+
+                    <div class="kpi-cell">
+                        <div class="kpi-label">Operativos</div>
+                        <div class="kpi-value num" id="operativos">–</div>
+                        <div class="kpi-sub">Disponibles ahora</div>
+                    </div>
+
+                    <div class="kpi-cell" id="kpiPrioridad">
+                        <div class="kpi-label">Atención prioritaria</div>
+                        <div class="kpi-value num" id="prioridad">–</div>
+                        <div class="kpi-sub">Requieren seguimiento</div>
+                    </div>
+
+                    <div class="kpi-cell">
+                        <div class="kpi-label">Valor estimado</div>
+                        <div class="kpi-value num" id="valor">–</div>
+                        <div class="kpi-sub">Valor de adquisición</div>
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    <div class="panel">
+
+                        <div class="panel-head">
+                            <h2>Inventario reciente</h2>
+
+                            <button class="btn"
+                                    onclick="showSection('assets', document.querySelectorAll('.nav button')[1])">
+                                Ver inventario
+                                <i data-lucide="arrow-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+
+                        <div id="recent"></div>
+
+                    </div>
+
+                    <div class="panel">
+
+                        <div class="panel-head">
+                            <h2>Salud operativa</h2>
+                            <i data-lucide="activity" style="color:var(--accent); width:19px" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="health-row">
+                            <span>Disponibilidad general</span>
+                            <b class="num" id="health">–</b>
+                        </div>
+
+                        <div class="gauge" role="img" aria-label="Disponibilidad general">
+                            <div class="gauge-fill" id="healthBar"></div>
+                            <div class="gauge-ticks" aria-hidden="true">
+                                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                            </div>
+                            <div class="gauge-marker" id="healthMarker" style="left:0"></div>
+                        </div>
+
+                        <div class="health-row">
+                            <span>Revisiones vencidas</span>
+                            <b class="num" id="overdue" style="color:var(--warn)">–</b>
+                        </div>
+
+                        <h3 style="font-size:15px; margin:22px 0 12px">Alertas inteligentes</h3>
+
+                        <div class="alerts" id="alerts"></div>
+
+                    </div>
+
+                </div>
+
+            </section>

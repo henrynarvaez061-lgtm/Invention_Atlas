@@ -1,3 +1,5 @@
+# Modelos del proyecto Atlas MN.
+# Nota IA: parte de este código fue generado con ayuda de IA (OpenCode/Claude).
 from django.db import models
 
 

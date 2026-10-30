@@ -1,0 +1,51 @@
+        <!-- Riel de navegación -->
+
+        <aside class="rail" aria-label="Navegación principal">
+
+            <div class="brand">
+                <div class="plate-mark" aria-hidden="true">A</div>
+                <span class="brand-name">
+                    <b>ATLAS</b>
+                    <span>Gestión de activos</span>
+                </span>
+            </div>
+
+            <nav class="nav">
+                <button class="active" aria-current="page" onclick="showSection('dashboard', this)">
+                    <i data-lucide="layout-dashboard" aria-hidden="true"></i>
+                    <span class="nav-full">Resumen</span>
+                    <span class="nav-short">Resumen</span>
+                </button>
+
+                <button onclick="showSection('assets', this)">
+                    <i data-lucide="boxes" aria-hidden="true"></i>
+                    <span class="nav-full">Activos</span>
+                    <span class="nav-short">Activos</span>
+                </button>
+
+                <button onclick="showSection('orders', this)">
+                    <i data-lucide="clipboard-list" aria-hidden="true"></i>
+                    <span class="nav-full">Órdenes de trabajo</span>
+                    <span class="nav-short">Órdenes</span>
+                </button>
+
+                <button onclick="showSection('history', this)">
+                    <i data-lucide="history" aria-hidden="true"></i>
+                    <span class="nav-full">Historial</span>
+                    <span class="nav-short">Historial</span>
+                </button>
+            </nav>
+
+            <div class="rail-foot">
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-pressed="false">
+                    <i data-lucide="moon" aria-hidden="true"></i>
+                    <span id="themeLabel">Modo oscuro</span>
+                </button>
+
+                <p class="rail-note">
+                    <b>Sistema inteligente de gestión</b><br>
+                    Universidad · Operaciones
+                </p>
+            </div>
+
+        </aside>

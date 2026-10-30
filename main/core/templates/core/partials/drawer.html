@@ -1,0 +1,17 @@
+    <!-- Panel de detalle del activo (placa) -->
+
+    <div class="drawer-backdrop" id="drawerBackdrop" hidden onclick="closeDrawer()"></div>
+
+    <aside class="drawer" id="assetDrawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle"
+           aria-hidden="true" data-ui>
+        <div class="drawer-head">
+            <div>
+                <h2 id="drawerTitle">Detalle del activo</h2>
+                <p id="drawerCode"></p>
+            </div>
+            <button class="btn icon ghost" onclick="closeDrawer()" aria-label="Cerrar detalle">
+                <i data-lucide="x" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="drawer-body" id="drawerBody"></div>
+    </aside>

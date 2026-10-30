@@ -1,0 +1,187 @@
+        /* ============================================================
+           10. SALUD OPERATIVA · medidor estampado
+           ============================================================ */
+
+        .health-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .health-row span {
+            color: var(--ink-2);
+            font-size: 14px;
+        }
+
+        .health-row b {
+            font-family: var(--font-narrow);
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        .gauge {
+            position: relative;
+            height: 14px;
+            background: var(--surface-3);
+            border-radius: var(--radius);
+            margin: 6px 0 20px;
+        }
+
+        .gauge-fill {
+            position: absolute;
+            inset: 0 auto 0 0;
+            width: 0;
+            background: var(--ok);
+            border-radius: var(--radius);
+            transition: width 520ms var(--ease-out);
+        }
+
+        .gauge-ticks {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .gauge-ticks i {
+            width: 1px;
+            background: var(--ground);
+            opacity: 0.55;
+        }
+
+        .gauge-marker {
+            position: absolute;
+            top: -4px;
+            bottom: -4px;
+            width: 3px;
+            background: var(--ink);
+            border-radius: 1px;
+            transition: left 520ms var(--ease-out);
+        }
+
+        .alerts {
+            display: grid;
+            gap: 8px;
+        }
+
+        .alert {
+            position: relative;
+            display: flex;
+            gap: 12px;
+            padding: 12px 14px 12px 16px;
+            background: var(--surface-2);
+            border-radius: var(--radius);
+        }
+
+        .alert::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 8px;
+            width: 3px;
+            background: var(--warn);
+        }
+
+        .alert.d::before {
+            background: var(--danger);
+        }
+
+        .alert.ok::before {
+            background: var(--ok);
+        }
+
+        .alert svg {
+            width: 18px;
+            height: 18px;
+            flex: none;
+            margin-top: 2px;
+            color: var(--warn);
+        }
+
+        .alert.d svg {
+            color: var(--danger);
+        }
+
+        .alert.ok svg {
+            color: var(--ok);
+        }
+
+        .alert strong {
+            display: block;
+            font-size: 14.5px;
+            font-weight: 600;
+        }
+
+        .alert span {
+            color: var(--ink-3);
+            font-size: 13px;
+        }
+
+        /* ============================================================
+           11. ESTADOS VACÍOS Y SKELETONS
+           ============================================================ */
+
+        .empty {
+            padding: 44px 20px;
+            text-align: center;
+            color: var(--ink-3);
+        }
+
+        .empty svg {
+            width: 34px;
+            height: 34px;
+            color: var(--ink-3);
+            margin-bottom: 10px;
+        }
+
+        .empty strong {
+            display: block;
+            color: var(--ink-2);
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .sk {
+            display: block;
+            height: 12px;
+            background: var(--surface-3);
+            border-radius: var(--radius);
+            animation: skPulse 1.3s ease-in-out infinite;
+        }
+
+        .sk-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 12px;
+        }
+
+        .sk-row .sk:nth-child(1) {
+            width: 34%;
+        }
+
+        .sk-row .sk:nth-child(2) {
+            width: 22%;
+        }
+
+        .sk-row .sk:nth-child(3) {
+            width: 18%;
+        }
+
+        .sk-row .sk:nth-child(4) {
+            width: 14%;
+        }
+
+        @keyframes skPulse {
+            0%,
+            100% {
+                opacity: 0.45;
+            }
+            50% {
+                opacity: 0.9;
+            }
+        }

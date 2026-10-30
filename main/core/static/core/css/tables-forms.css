@@ -1,0 +1,173 @@
+        /* ============================================================
+           8. TABLAS
+           ============================================================ */
+
+        .table-wrap {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th {
+            text-align: left;
+            color: var(--ink-3);
+            font-weight: 600;
+            font-size: 13px;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--line);
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 13px 12px;
+            border-bottom: 1px solid var(--line);
+            vertical-align: middle;
+        }
+
+        tbody tr {
+            transition: background-color var(--t-fast) ease;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            tbody tr:hover {
+                background: var(--surface-2);
+            }
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr {
+            animation: rowIn 320ms var(--ease-out) both;
+        }
+
+        @keyframes rowIn {
+            from {
+                opacity: 0;
+                transform: translateY(6px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Identidad del activo = placa */
+        .asset {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+        }
+
+        .asset-plate {
+            min-width: 0;
+        }
+
+        .asset-code {
+            font-family: var(--font-narrow);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            color: var(--accent);
+        }
+
+        [data-theme='light'] .asset-code {
+            color: var(--accent);
+        }
+
+        .asset-name {
+            display: block;
+            color: var(--ink);
+            font-weight: 600;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 34ch;
+        }
+
+        .asset-meta {
+            color: var(--ink-3);
+            font-size: 13px;
+        }
+
+        .cell-actions {
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .cell-actions .btn {
+            margin-left: 6px;
+        }
+
+        .muted {
+            color: var(--ink-3);
+            font-size: 13px;
+        }
+
+        .row-actions {
+            display: inline-flex;
+            gap: 6px;
+        }
+
+        /* Fila clicable (abre la placa) */
+        tr.clickable {
+            cursor: pointer;
+        }
+
+        /* ============================================================
+           9. FILTROS Y FORMULARIOS
+           ============================================================ */
+
+        .filters {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .input,
+        .select,
+        textarea.input {
+            width: 100%;
+            min-width: 0;
+            min-height: 44px;
+            padding: 10px 12px;
+            background: var(--ground);
+            color: var(--ink);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            outline: 0;
+            transition: border-color var(--t-fast) ease, background-color var(--t-fast) ease;
+        }
+
+        .input::placeholder {
+            color: var(--ink-3);
+        }
+
+        .input:hover,
+        .select:hover {
+            border-color: var(--line-strong);
+        }
+
+        .input:focus,
+        .select:focus,
+        textarea.input:focus {
+            border-color: var(--accent);
+        }
+
+        .search {
+            flex: 1;
+        }
+
+        .filter-count {
+            align-self: center;
+            color: var(--ink-3);
+            font-size: 13.5px;
+            margin-left: auto;
+            white-space: nowrap;
+        }

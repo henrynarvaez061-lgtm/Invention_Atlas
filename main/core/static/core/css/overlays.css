@@ -1,0 +1,231 @@
+        /* ============================================================
+           12. MODALES
+           ============================================================ */
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 30;
+            padding: 20px;
+            background: rgba(6, 8, 10, 0.72);
+            place-items: center;
+            overflow-y: auto;
+        }
+
+        [data-theme='light'] .modal {
+            background: rgba(30, 36, 40, 0.42);
+        }
+
+        .modal.open {
+            display: grid;
+        }
+
+        .dialog {
+            width: min(680px, 100%);
+            margin: auto;
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            box-shadow: var(--shadow-float); /* taste-skill-ignore: diálogo (overlay real) */
+            max-height: 92svh;
+            overflow-y: auto;
+            transform-origin: center;
+        }
+
+        .modal.open .dialog {
+            animation: dialogIn 220ms var(--ease-out) both;
+        }
+
+        @keyframes dialogIn {
+            from {
+                opacity: 0;
+                transform: scale(0.985) translateY(6px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .dialog-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .dialog h2 {
+            font-size: 22px;
+        }
+
+        .dialog-head p {
+            color: var(--ink-3);
+            font-size: 13.5px;
+            margin: 4px 0 0;
+        }
+
+        .form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .form label {
+            display: grid;
+            gap: 7px;
+            color: var(--ink-2);
+            font-size: 13.5px;
+            font-weight: 500;
+        }
+
+        .form .wide {
+            grid-column: 1 / -1;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        /* ============================================================
+           13. PANEL DE DETALLE DEL ACTIVO (gesto firma)
+           ============================================================ */
+
+        .drawer-backdrop {
+            position: fixed;
+            inset: 0;
+            z-index: 28;
+            background: rgba(6, 8, 10, 0.6);
+            opacity: 0;
+            transition: opacity var(--t-base) ease;
+        }
+
+        [data-theme='light'] .drawer-backdrop {
+            background: rgba(30, 36, 40, 0.36);
+        }
+
+        .drawer-backdrop.show {
+            opacity: 1;
+        }
+
+        .drawer {
+            position: fixed;
+            z-index: 29;
+            top: 0;
+            right: 0;
+            height: 100svh;
+            width: min(460px, 100%);
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            background: var(--line);
+            box-shadow: var(--shadow-float); /* taste-skill-ignore: panel lateral (overlay real) */
+            transform: translateX(100%);
+            transition: transform 340ms var(--ease-drawer);
+            will-change: transform;
+        }
+
+        .drawer.open {
+            transform: translateX(0);
+        }
+
+        .drawer-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 20px 22px 16px;
+            background: var(--surface);
+        }
+
+        .drawer-head h2 {
+            font-size: 21px;
+        }
+
+        .drawer-head p {
+            color: var(--ink-3);
+            font-size: 13px;
+            margin: 5px 0 0;
+        }
+
+        .drawer-body {
+            padding: 20px 22px 30px;
+            overflow-y: auto;
+            flex: 1;
+            min-height: 0;
+            background: var(--surface);
+        }
+
+        .plate-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: var(--line);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-bottom: 22px;
+        }
+
+        .plate-field {
+            background: var(--surface-2);
+            padding: 12px 14px;
+        }
+
+        .plate-field dt {
+            color: var(--ink-3);
+            font-size: 12.5px;
+            margin-bottom: 3px;
+        }
+
+        .plate-field dd {
+            margin: 0;
+            font-size: 14.5px;
+            font-weight: 500;
+            overflow-wrap: anywhere;
+        }
+
+        .drawer-section {
+            margin-top: 24px;
+        }
+
+        .drawer-section h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .mini-list {
+            display: grid;
+            gap: 8px;
+        }
+
+        .mini-item {
+            padding: 12px 14px;
+            background: var(--surface-2);
+            border-radius: var(--radius);
+        }
+
+        .mini-item .row-between {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .mini-item strong {
+            font-size: 14.5px;
+        }
+
+        .mini-item p {
+            margin: 6px 0 0;
+            color: var(--ink-2);
+            font-size: 13.5px;
+        }
+
+        .mini-item time {
+            color: var(--ink-3);
+            font-size: 13px;
+        }
