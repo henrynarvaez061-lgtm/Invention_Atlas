@@ -1,0 +1,40 @@
+            <!-- Inventario -->
+
+            <section id="assets" class="section" style="display:none" aria-label="Inventario de activos">
+
+                <div class="panel">
+
+                    <div class="panel-head">
+                        <h2>Inventario de activos</h2>
+
+                        <button class="btn primary" onclick="openModal('assetModal', this)">
+                            <i data-lucide="plus" aria-hidden="true"></i>
+                            <span>Registrar activo</span>
+                        </button>
+                    </div>
+
+                    <div class="filters">
+                        <input
+                            id="search"
+                            class="input search"
+                            type="search"
+                            placeholder="Buscar por código, nombre, ubicación o responsable..."
+                            aria-label="Buscar activos"
+                            oninput="renderAssets()"
+                        >
+
+                        <select id="status" class="select" aria-label="Filtrar por estado" onchange="renderAssets()" style="max-width:240px">
+                            <option value="">Todos los estados</option>
+                            <option>Operativo</option>
+                            <option>En mantenimiento</option>
+                            <option>Fuera de servicio</option>
+                        </select>
+
+                        <span class="filter-count" id="assetsCount" aria-live="polite"></span>
+                    </div>
+
+                    <div id="assetsTable"></div>
+
+                </div>
+
+            </section>

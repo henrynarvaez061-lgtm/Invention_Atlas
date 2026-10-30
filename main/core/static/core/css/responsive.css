@@ -1,0 +1,264 @@
+        /* ============================================================
+           15. RESPONSIVE
+           ============================================================ */
+
+        @media (max-width: 1120px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .kpi {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 860px) {
+            .app {
+                display: block;
+                padding-bottom: calc(66px + env(safe-area-inset-bottom));
+            }
+
+            /* El riel pasa a barra inferior táctil */
+            .rail {
+                position: fixed;
+                inset: auto 0 0 0;
+                top: auto;
+                height: auto;
+                width: 100%;
+                flex-direction: row;
+                align-items: stretch;
+                padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+                z-index: 20;
+            }
+
+            .brand,
+            .rail-foot {
+                display: none;
+            }
+
+            .nav {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2px;
+                width: 100%;
+            }
+
+            .nav button {
+                flex-direction: column;
+                justify-content: center;
+                gap: 4px;
+                min-height: 56px;
+                padding: 8px 4px;
+                font-size: 12.5px;
+                text-align: center;
+            }
+
+            .nav button::before {
+                left: 8px;
+                right: 8px;
+                top: 0;
+                bottom: auto;
+                width: auto;
+                height: 3px;
+                transform: scaleX(0);
+            }
+
+            .nav button.active::before {
+                transform: scaleX(1);
+            }
+
+            .nav button svg {
+                width: 21px;
+                height: 21px;
+            }
+
+            .nav-full {
+                display: none;
+            }
+
+            .nav-short {
+                display: inline;
+            }
+
+            .main {
+                padding: 18px 16px 30px;
+            }
+
+            .top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+            }
+
+            .top-brand {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-family: var(--font-narrow);
+                font-weight: 700;
+                font-size: 16px;
+            }
+
+            .top-brand .plate-mark {
+                width: 32px;
+                height: 32px;
+                font-size: 17px;
+            }
+
+            .top h1 {
+                font-size: 26px;
+            }
+
+            .top-actions {
+                width: 100%;
+            }
+
+            .top-actions .btn {
+                flex: 1;
+            }
+
+            .panel {
+                padding: 16px 14px 18px;
+            }
+
+            .kpi-value {
+                font-size: 30px;
+            }
+
+            .kpi-cell {
+                padding: 15px 16px;
+            }
+
+            .filters {
+                flex-wrap: wrap;
+            }
+
+            .search {
+                min-width: 100%;
+            }
+
+            .form {
+                grid-template-columns: 1fr;
+            }
+
+            .form .wide {
+                grid-column: auto;
+            }
+
+            .toast {
+                left: 16px;
+                right: 16px;
+                bottom: calc(78px + env(safe-area-inset-bottom));
+                max-width: none;
+            }
+
+            /* Tabla → placas apiladas */
+            .table-wrap {
+                overflow: visible;
+            }
+
+            table,
+            tbody {
+                display: block;
+            }
+
+            thead {
+                display: none;
+            }
+
+            tbody {
+                display: grid;
+                gap: 10px;
+            }
+
+            tbody tr {
+                display: block;
+                background: var(--surface-2);
+                border-radius: var(--radius);
+                padding: 12px 14px;
+            }
+
+            td {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 16px;
+                padding: 7px 0;
+                border-bottom: none;
+            }
+
+            td::before {
+                content: attr(data-label);
+                color: var(--ink-3);
+                font-size: 13px;
+                flex: none;
+            }
+
+            td.cell-primary {
+                display: block;
+                padding: 2px 0 10px;
+                border-bottom: 1px solid var(--line);
+                margin-bottom: 6px;
+            }
+
+            td.cell-primary::before,
+            td.cell-actions::before {
+                display: none;
+            }
+
+            td.cell-actions {
+                justify-content: flex-end;
+            }
+
+            .drawer {
+                top: auto;
+                bottom: 0;
+                height: auto;
+                max-height: 90svh;
+                width: 100%;
+                border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+                transform: translateY(100%);
+            }
+
+            .drawer.open {
+                transform: translateY(0);
+            }
+
+            .plate-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .kpi {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================================
+           16. MOVIMIENTO REDUCIDO
+           ============================================================ */
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .status-tab,
+            tbody tr,
+            .modal.open .dialog {
+                animation: none !important;
+            }
+
+            .btn:active {
+                transform: none;
+            }
+        }

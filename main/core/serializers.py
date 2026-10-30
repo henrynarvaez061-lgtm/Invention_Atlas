@@ -1,3 +1,5 @@
+# Serializadores DRF: validan y dan forma a los datos expuestos por la API.
+# Nota IA: parte de este código fue generado con ayuda de IA (OpenCode/Claude).
 from rest_framework import serializers
 from .models import User, Building, Activo, ActivoUniversidad, OrdenActivo, HistorialActivo
 

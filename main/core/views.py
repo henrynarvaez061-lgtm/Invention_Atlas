@@ -1,3 +1,9 @@
+"""
+API del proyecto Atlas MN.
+
+Nota IA: parte de este código fue generado con ayuda de IA (OpenCode/Claude);
+el diseño, las decisiones y la revisión final son del autor.
+"""
 from django.shortcuts import render
 from rest_framework import viewsets, status
 from rest_framework.views import APIView
@@ -10,6 +16,9 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by("-id")
     serializer_class = UserSerializer
 
+# Mapa genérico recurso → (modelo, serializador): permite que una sola vista
+# sirva los tres recursos de la interfaz (/api/storages/<recurso>) sin repetir
+# el mismo código tres veces.
 RESOURCE_MAP = {
     "activos_universidad": (ActivoUniversidad, ActivoUniversidadSerializer),
     "ordenes_activos": (OrdenActivo, OrdenActivoSerializer),

@@ -1,22 +1,13 @@
 [project]
-name = "invsis"
-version = "0.1.0"
-description = "Add your description here"
+name = "atlas-mn"
+version = "1.0.0"
+description = "Atlas MN: sistema de gestión de activos y órdenes de mantenimiento (Django + Django REST Framework)"
 readme = "README.md"
 authors = [
-    { name = "Henrry", email = "your.email@example.com" }
+    { name = "Henrry" }
 ]
 requires-python = ">=3.14"
 dependencies = [
     "django>=6.1.1",
-    "django-filter>=26.1",
     "djangorestframework>=3.18.1",
-    "markdown>=3.11",
 ]
-
-[project.scripts]
-invsis = "invsis:main"
-
-[build-system]
-requires = ["uv_build>=0.12.21,<0.13.0"]
-build-backend = "uv_build"

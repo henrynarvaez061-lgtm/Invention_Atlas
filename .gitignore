@@ -9,6 +9,15 @@ wheels/
 # Virtual environments
 .venv
 
-# Artefactos de desarrollo (skills de diseño)
-.impeccable/
-.taste-skill/
+# Entornos / secretos
+.env
+*.env
+
+# Herramientas de agente de IA (no forman parte del proyecto)
+node_modules/
+.agents/
+skills-lock.json
+
+# Sistema operativo
+.DS_Store
+index.backup.html
